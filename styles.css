@@ -1,0 +1,161 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Task Form */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.task-form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.task-form button {
+    padding: 0.75rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.task-form button:hover {
+    background: #45a049;
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.task.completed {
+    background: #e8f5e8;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.task.overdue {
+    border-color: #f44336;
+}
+
+.task-text {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.task-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 1rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-actions button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.edit-btn {
+    background: #2196F3;
+    color: white;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+.complete-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.task-actions button:hover {
+    opacity: 0.8;
+}
+
+/* Edit Mode */
+.task.editing .task-text {
+    display: none;
+}
+
+.task.editing .edit-input {
+    display: block;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+/* Responsiveness: Mobile Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .task-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .task-form {
+        gap: 0.25rem;
+    }
+}
